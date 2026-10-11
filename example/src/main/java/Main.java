@@ -1,13 +1,13 @@
-import imgui.ImFontConfig;
-import imgui.ImFontGlyphRangesBuilder;
-import imgui.ImGui;
-import imgui.ImGuiIO;
-import imgui.app.Application;
-import imgui.app.Configuration;
-import imgui.flag.ImGuiConfigFlags;
-import imgui.flag.ImGuiInputTextFlags;
-import imgui.flag.ImGuiWindowFlags;
-import imgui.type.ImString;
+import imgui.whaltermc90.ImFontConfig;
+import imgui.whaltermc90.ImFontGlyphRangesBuilder;
+import imgui.whaltermc90.ImGui;
+import imgui.whaltermc90.ImGuiIO;
+import imgui.whaltermc90.app.Application;
+import imgui.whaltermc90.app.Configuration;
+import imgui.whaltermc90.flag.ImGuiConfigFlags;
+import imgui.whaltermc90.flag.ImGuiInputTextFlags;
+import imgui.whaltermc90.flag.ImGuiWindowFlags;
+import imgui.whaltermc90.type.ImString;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -83,20 +83,9 @@ public class Main extends Application {
             }
             ImGui.sameLine();
             ImGui.text(String.valueOf(count));
-            ImGui.sameLine();
-            // imgui 1.91 TextLink — inline hyperlink widget, returns true when clicked.
-            if (ImGui.textLink("increment")) {
-                count++;
-            }
             ImGui.inputText("string", str, ImGuiInputTextFlags.CallbackResize);
             ImGui.text("Result: " + str.get());
             ImGui.sliderFloat("float", flt, 0, 1);
-
-            // imgui 1.91 TextLinkOpenURL — hyperlink that opens a URL on click.
-            ImGui.text("Learn more:");
-            ImGui.sameLine();
-            ImGui.textLinkOpenURL("Dear ImGui on GitHub", "https://github.com/ocornut/imgui");
-
             ImGui.separator();
             ImGui.text("Extra");
             Extra.show(this);

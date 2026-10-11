@@ -1,0 +1,13 @@
+package imgui.whaltermc90.extension.implot.flag;
+
+import imgui.whaltermc90.binding.annotation.BindingAstEnum;
+import imgui.whaltermc90.binding.annotation.BindingSource;
+
+@BindingSource
+public final class ImPlotColormap {
+    private ImPlotColormap() {
+    }
+
+    @BindingAstEnum(file = "ast-implot.json", qualType = "ImPlotColormap_")
+    public Void __;
+}

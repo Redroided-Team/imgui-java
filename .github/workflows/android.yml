@@ -1,0 +1,60 @@
+name: Android
+
+# Builds the relocated binding jar plus the arm64-v8a native library,
+# packed as jars, for the Android fork branch.
+on:
+  push:
+    branches:
+      - feat/android-1.90-relocated
+      - feat/android-*
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build-android:
+    name: Build Android (arm64-v8a)
+    runs-on: ubuntu-latest
+    env:
+      NDK_VERSION: 27.2.12479018
+    steps:
+      - name: Checkout Repository and Submodules
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+          submodules: true
+
+      - name: Setup Java
+        uses: actions/setup-java@v5
+        with:
+          distribution: liberica
+          java-version: 17
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v6.2.0
+
+      - name: Setup Android SDK and NDK
+        uses: android-actions/setup-android@v3
+
+      - name: Install NDK
+        run: sdkmanager "platform-tools" "platforms;android-34" "ndk;$NDK_VERSION"
+
+      - name: Build Binding Jar
+        run: ./gradlew :imgui-binding:jar :imgui-binding:sourcesJar :imgui-binding:javadocJar
+
+      - name: Build Android Natives Jar
+        env:
+          ANDROID_CXX: ${{ env.ANDROID_SDK_ROOT }}/ndk/${{ env.NDK_VERSION }}/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android24-clang++
+        run: ./gradlew :imgui-binding-natives:jar -PdeployType=android
+
+      # This helps to upload only jar files into the build artifact
+      - name: Copy Build Results to Temp
+        run: |
+          mkdir -p tmp/
+          cp imgui-binding/build/libs/*.jar tmp/
+          cp imgui-binding-natives/build/libs/imgui-java-natives-android-*.jar tmp/
+
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v7
+        with:
+          name: android-libraries
+          path: tmp/*.jar

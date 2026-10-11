@@ -6,9 +6,9 @@
 
 [![Github All Releases](https://img.shields.io/github/downloads/SpaiR/imgui-java/total.svg?logo=github)](https://github.com/SpaiR/imgui-java/releases)
 [![CI](https://github.com/SpaiR/imgui-java/actions/workflows/ci.yml/badge.svg)](https://github.com/SpaiR/imgui-java/actions/workflows/ci.yml)<br>
-[![Maven Central](https://img.shields.io/maven-central/v/io.github.spair/imgui-java-binding?logo=apache-maven)](https://central.sonatype.com/search?q=io.github.spair++imgui-java)
-[![binding javadoc](https://javadoc.io/badge2/io.github.spair/imgui-java-binding/javadoc_binding.svg?logo=java)](https://javadoc.io/doc/io.github.spair/imgui-java-binding)
-[![app javadoc](https://javadoc.io/badge2/io.github.spair/imgui-java-app/javadoc_app.svg?logo=java)](https://javadoc.io/doc/io.github.spair/imgui-java-app)
+[![Maven Central](https://img.shields.io/maven-central/v/imgui.whaltermc90/imgui-java-binding?logo=apache-maven)](https://central.sonatype.com/search?q=imgui.whaltermc90++imgui-java)
+[![binding javadoc](https://javadoc.io/badge2/imgui.whaltermc90/imgui-java-binding/javadoc_binding.svg?logo=java)](https://javadoc.io/doc/imgui.whaltermc90/imgui-java-binding)
+[![app javadoc](https://javadoc.io/badge2/imgui.whaltermc90/imgui-java-app/javadoc_app.svg?logo=java)](https://javadoc.io/doc/imgui.whaltermc90/imgui-java-app)
 
 Tracks **Dear ImGui v1.92.7** (docking branch).
 
@@ -127,11 +127,11 @@ public class Main extends Application {
 }
 ```
 
-Read `imgui.app.Application` [javadoc](https://javadoc.io/doc/io.github.spair/imgui-java-app) to understand how it works under the hood.
+Read `imgui.whaltermc90.app.Application` [javadoc](https://javadoc.io/doc/imgui.whaltermc90/imgui-java-app) to understand how it works under the hood.
 
 ### Dependencies
 
-![Maven Central](https://img.shields.io/maven-central/v/io.github.spair/imgui-java-binding?color=green&label=version&style=flat-square)
+![Maven Central](https://img.shields.io/maven-central/v/imgui.whaltermc90/imgui-java-binding?color=green&label=version&style=flat-square)
 
 <details>
         <summary><b>Gradle</b></summary>
@@ -142,7 +142,7 @@ repositories {
 }
 
 dependencies {
-    implementation "io.github.spair:imgui-java-app:${version}"
+    implementation "imgui.whaltermc90:imgui-java-app:${version}"
 }
 ```
 </details>
@@ -153,7 +153,7 @@ dependencies {
 ```
 <dependencies>
     <dependency>
-        <groupId>io.github.spair</groupId>
+        <groupId>imgui.whaltermc90</groupId>
         <artifactId>imgui-java-app</artifactId>
         <version>${version}</version>
     </dependency>
@@ -178,7 +178,7 @@ Both jars, with or without `all` classifier, have all required native libraries 
 
 #### Java Module System
 
-If using Java 9 modules, you will need to require the `imgui.app` module.
+If using Java 9 modules, you will need to require the `imgui.whaltermc90.app` module.
 
 ## Binding
 
@@ -187,7 +187,7 @@ You can refer to `imgui-app` module to see how things are done there.
 
 ### Dependencies
 
-![Maven Central](https://img.shields.io/maven-central/v/io.github.spair/imgui-java-binding?color=green&label=version&style=flat-square)
+![Maven Central](https://img.shields.io/maven-central/v/imgui.whaltermc90/imgui-java-binding?color=green&label=version&style=flat-square)
 
 For simplicity, example of dependencies for Gradle / Maven only shows how to add natives for Windows. Feel free to add other platforms.
 
@@ -220,10 +220,10 @@ dependencies {
         implementation "org.lwjgl:lwjgl$it::natives-windows"
     }
     
-    implementation "io.github.spair:imgui-java-binding:$imguiVersion"
-    implementation "io.github.spair:imgui-java-lwjgl3:$imguiVersion"
+    implementation "imgui.whaltermc90:imgui-java-binding:$imguiVersion"
+    implementation "imgui.whaltermc90:imgui-java-lwjgl3:$imguiVersion"
     
-    implementation "io.github.spair:imgui-java-natives-windows:$imguiVersion"
+    implementation "imgui.whaltermc90:imgui-java-natives-windows:$imguiVersion"
 }
 ```
 </details>
@@ -279,17 +279,17 @@ dependencies {
     </dependency>
     
     <dependency>
-        <groupId>io.github.spair</groupId>
+        <groupId>imgui.whaltermc90</groupId>
         <artifactId>imgui-java-binding</artifactId>
         <version>${imgui.java.version}</version>
     </dependency>
     <dependency>
-        <groupId>io.github.spair</groupId>
+        <groupId>imgui.whaltermc90</groupId>
         <artifactId>imgui-java-lwjgl3</artifactId>
         <version>${imgui.java.version}</version>
     </dependency>
     <dependency>
-        <groupId>io.github.spair</groupId>
+        <groupId>imgui.whaltermc90</groupId>
         <artifactId>imgui-java-natives-windows</artifactId>
         <version>${imgui.java.version}</version>
     </dependency>
@@ -377,7 +377,7 @@ The binding adapts the C++ API for Java; almost everything maps directly, but tw
 
 For everything else, follow upstream Dear ImGui's [documentation](https://github.com/ocornut/imgui#usage)
 and [wiki](https://github.com/ocornut/imgui/wiki);
-the [binding javadoc](https://javadoc.io/doc/io.github.spair/imgui-java-binding) covers Java-specific details.
+the [binding javadoc](https://javadoc.io/doc/imgui.whaltermc90/imgui-java-binding) covers Java-specific details.
 
 # How to Build Native Libraries
 

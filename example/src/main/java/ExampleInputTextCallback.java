@@ -1,10 +1,10 @@
-import imgui.ImGui;
-import imgui.ImGuiInputTextCallbackData;
-import imgui.callback.ImGuiInputTextCallback;
-import imgui.flag.ImGuiCond;
-import imgui.flag.ImGuiInputTextFlags;
-import imgui.type.ImBoolean;
-import imgui.type.ImString;
+import imgui.whaltermc90.ImGui;
+import imgui.whaltermc90.ImGuiInputTextCallbackData;
+import imgui.whaltermc90.callback.ImGuiInputTextCallback;
+import imgui.whaltermc90.flag.ImGuiCond;
+import imgui.whaltermc90.flag.ImGuiInputTextFlags;
+import imgui.whaltermc90.type.ImBoolean;
+import imgui.whaltermc90.type.ImString;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;

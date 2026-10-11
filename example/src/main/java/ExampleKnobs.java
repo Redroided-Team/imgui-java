@@ -1,11 +1,11 @@
-import imgui.ImGui;
-import imgui.extension.imguiknobs.ImGuiKnobs;
-import imgui.extension.imguiknobs.flag.ImGuiKnobFlags;
-import imgui.extension.imguiknobs.flag.ImGuiKnobVariant;
-import imgui.flag.ImGuiCond;
-import imgui.flag.ImGuiWindowFlags;
-import imgui.type.ImBoolean;
-import imgui.type.ImFloat;
+import imgui.whaltermc90.ImGui;
+import imgui.whaltermc90.extension.imguiknobs.ImGuiKnobs;
+import imgui.whaltermc90.extension.imguiknobs.flag.ImGuiKnobFlags;
+import imgui.whaltermc90.extension.imguiknobs.flag.ImGuiKnobVariant;
+import imgui.whaltermc90.flag.ImGuiCond;
+import imgui.whaltermc90.flag.ImGuiWindowFlags;
+import imgui.whaltermc90.type.ImBoolean;
+import imgui.whaltermc90.type.ImFloat;
 
 public class ExampleKnobs {
 

@@ -16,7 +16,7 @@ tasks.withType(JavaCompile).configureEach {
 
 def packageName = 'imgui-java-natives-linux'
 def packageDesc = 'Native binaries for imgui-java binding for Linux'
-def moduleName = 'imgui.natives.linux'
+def moduleName = 'imgui.whaltermc90.natives.linux'
 def fromDir = '../bin'
 def libName = 'libimgui-java64.so'
 
@@ -24,30 +24,49 @@ switch (findProperty('deployType')) {
     case 'windows':
         packageName = 'imgui-java-natives-windows'
         packageDesc = 'Native binaries for imgui-java binding for Windows'
-        moduleName = 'imgui.natives.windows'
+        moduleName = 'imgui.whaltermc90.natives.windows'
         libName = 'imgui-java64.dll'
         break
     case 'linux':
         packageName = 'imgui-java-natives-linux'
         packageDesc = 'Native binaries for imgui-java binding for Linux'
-        moduleName = 'imgui.natives.linux'
+        moduleName = 'imgui.whaltermc90.natives.linux'
         libName = 'libimgui-java64.so'
         break
     case 'macos':
         packageName = 'imgui-java-natives-macos'
         packageDesc = 'Native binaries for imgui-java binding for macOS'
-        moduleName = 'imgui.natives.macos'
+        moduleName = 'imgui.whaltermc90.natives.macos'
         libName = 'libimgui-java64.dylib'
+        break
+    case 'android':
+        packageName = 'imgui-java-natives-android'
+        packageDesc = 'Native binaries for imgui-java binding for Android (arm64-v8a)'
+        moduleName = 'imgui.whaltermc90.natives.android'
+        fromDir = '../imgui-binding/build/android/arm64-v8a'
+        libName = 'libimgui-java64.so'
         break
 }
 
 jar {
+    // Name the jar after the published artifact when a deploy target is set.
+    if (findProperty('deployType') != null) {
+        archiveBaseName.set(packageName)
+    }
     from(fromDir) {
         include "$libName" // this is fine
         into 'io/imgui/java/native-bin/'
     }
     manifest {
         attributes  'Automatic-Module-Name': moduleName
+    }
+}
+
+// The Android native library is produced by :imgui-binding:generateAndroidLibs;
+// make sure it exists before packing the jar.
+if (findProperty('deployType') == 'android') {
+    tasks.named('jar') {
+        dependsOn ':imgui-binding:generateAndroidLibs'
     }
 }
 

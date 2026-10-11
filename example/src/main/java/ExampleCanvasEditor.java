@@ -1,9 +1,9 @@
-import imgui.*;
-import imgui.flag.ImGuiButtonFlags;
-import imgui.flag.ImGuiCond;
-import imgui.flag.ImGuiMouseButton;
-import imgui.flag.ImGuiPopupFlags;
-import imgui.type.ImBoolean;
+import imgui.whaltermc90.*;
+import imgui.whaltermc90.flag.ImGuiButtonFlags;
+import imgui.whaltermc90.flag.ImGuiCond;
+import imgui.whaltermc90.flag.ImGuiMouseButton;
+import imgui.whaltermc90.flag.ImGuiPopupFlags;
+import imgui.whaltermc90.type.ImBoolean;
 
 import java.util.ArrayList;
 import java.util.List;

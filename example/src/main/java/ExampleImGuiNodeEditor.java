@@ -1,12 +1,12 @@
-import imgui.ImVec2;
-import imgui.extension.nodeditor.NodeEditor;
-import imgui.extension.nodeditor.NodeEditorConfig;
-import imgui.extension.nodeditor.NodeEditorContext;
-import imgui.extension.nodeditor.flag.NodeEditorPinKind;
-import imgui.flag.ImGuiCond;
-import imgui.internal.ImGui;
-import imgui.type.ImBoolean;
-import imgui.type.ImLong;
+import imgui.whaltermc90.ImVec2;
+import imgui.whaltermc90.extension.nodeditor.NodeEditor;
+import imgui.whaltermc90.extension.nodeditor.NodeEditorConfig;
+import imgui.whaltermc90.extension.nodeditor.NodeEditorContext;
+import imgui.whaltermc90.extension.nodeditor.flag.NodeEditorPinKind;
+import imgui.whaltermc90.flag.ImGuiCond;
+import imgui.whaltermc90.internal.ImGui;
+import imgui.whaltermc90.type.ImBoolean;
+import imgui.whaltermc90.type.ImLong;
 
 import java.awt.Desktop;
 import java.net.URI;
@@ -73,8 +73,8 @@ public class ExampleImGuiNodeEditor {
                         source.outputNodeId = target.nodeId;
                     }
                 }
+                NodeEditor.endCreate();
             }
-            NodeEditor.endCreate();
 
             int uniqueLinkId = 1;
             for (Graph.GraphNode node : graph.nodes.values()) {

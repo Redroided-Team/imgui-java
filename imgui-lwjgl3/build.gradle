@@ -31,6 +31,6 @@ configurePublishing('imgui-java-lwjgl3', 'Backend LWJGL3 implementation for imgu
 
 jar {
     manifest {
-        attributes  'Automatic-Module-Name': 'imgui.lwjgl3'
+        attributes  'Automatic-Module-Name': 'imgui.whaltermc90.lwjgl3'
     }
 }

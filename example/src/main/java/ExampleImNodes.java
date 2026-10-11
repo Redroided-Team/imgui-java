@@ -1,13 +1,13 @@
-import imgui.extension.imnodes.ImNodes;
-import imgui.extension.imnodes.ImNodesContext;
-import imgui.extension.imnodes.ImNodesEditorContext;
-import imgui.extension.imnodes.flag.ImNodesPinShape;
-import imgui.extension.imnodes.flag.ImNodesMiniMapLocation;
-import imgui.flag.ImGuiCond;
-import imgui.flag.ImGuiMouseButton;
-import imgui.internal.ImGui;
-import imgui.type.ImBoolean;
-import imgui.type.ImInt;
+import imgui.whaltermc90.extension.imnodes.ImNodes;
+import imgui.whaltermc90.extension.imnodes.ImNodesContext;
+import imgui.whaltermc90.extension.imnodes.ImNodesEditorContext;
+import imgui.whaltermc90.extension.imnodes.flag.ImNodesPinShape;
+import imgui.whaltermc90.extension.imnodes.flag.ImNodesMiniMapLocation;
+import imgui.whaltermc90.flag.ImGuiCond;
+import imgui.whaltermc90.flag.ImGuiMouseButton;
+import imgui.whaltermc90.internal.ImGui;
+import imgui.whaltermc90.type.ImBoolean;
+import imgui.whaltermc90.type.ImInt;
 
 import java.awt.Desktop;
 import java.net.URI;

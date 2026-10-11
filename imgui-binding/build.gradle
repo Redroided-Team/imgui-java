@@ -1,4 +1,5 @@
 import org.apache.tools.ant.filters.ReplaceTokens
+import tool.generator.GenerateAndroidLibs
 import tool.generator.GenerateLibs
 import tool.generator.api.task.GenerateApi
 
@@ -47,12 +48,17 @@ tasks.register('generateLibs', GenerateLibs) {
     it.dependsOn rootProject.tasks.named('applyVendorPatches')
 }
 
+tasks.register('generateAndroidLibs', GenerateAndroidLibs) {
+    it.dependsOn assemble
+    it.dependsOn rootProject.tasks.named('applyVendorPatches')
+}
+
 apply from: "$rootDir/publish.gradle"
 configurePublishing('imgui-java-binding', 'JNI based binding for Dear ImGui', project.version)
 
 jar {
     manifest {
-        attributes  'Automatic-Module-Name': 'imgui.binding'
+        attributes  'Automatic-Module-Name': 'imgui.whaltermc90.binding'
     }
 }
 

@@ -1,10 +1,10 @@
-import imgui.ImGui;
-import imgui.flag.ImGuiDragDropFlags;
-import imgui.flag.ImGuiInputTextFlags;
-import imgui.flag.ImGuiWindowFlags;
-import imgui.type.ImBoolean;
-import imgui.type.ImInt;
-import imgui.type.ImString;
+import imgui.whaltermc90.ImGui;
+import imgui.whaltermc90.flag.ImGuiDragDropFlags;
+import imgui.whaltermc90.flag.ImGuiInputTextFlags;
+import imgui.whaltermc90.flag.ImGuiWindowFlags;
+import imgui.whaltermc90.type.ImBoolean;
+import imgui.whaltermc90.type.ImInt;
+import imgui.whaltermc90.type.ImString;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -34,26 +34,20 @@ public class ExampleDragAndDrop {
             ImGui.separator();
 
             ImGui.text("Drop here any:");
-            ImGui.pushID("any");
             ImGui.button(data, 100, 50);
             setupTarget();
-            ImGui.popID();
 
             ImGui.separator();
 
             ImGui.text("Drop here string payload only");
-            ImGui.pushID("string");
             ImGui.button(data, 100, 50);
             setupStringPayloadTarget();
-            ImGui.popID();
 
             ImGui.separator();
 
             ImGui.text("Drop here class specific payload only");
-            ImGui.pushID("class");
             ImGui.button(data, 100, 50);
             setupClassSpecificPayloadTarget();
-            ImGui.popID();
         }
         ImGui.end();
     }
