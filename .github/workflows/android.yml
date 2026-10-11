@@ -34,6 +34,10 @@ jobs:
 
       - name: Setup Android SDK and NDK
         uses: android-actions/setup-android@v3
+        with:
+          # The action's default package list still contains the obsolete
+          # `tools` package, which makes sdkmanager exit non-zero.
+          packages: platform-tools
 
       - name: Install NDK
         run: sdkmanager "platform-tools" "platforms;android-34" "ndk;$NDK_VERSION"
